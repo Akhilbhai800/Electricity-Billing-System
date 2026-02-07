@@ -1,0 +1,79 @@
+/* ===== DARK THEME VARIABLES ===== */
+.dark-theme {
+    --bg-primary: #1a1a1a;
+    --bg-secondary: #2d2d2d;
+    --bg-card: #363636;
+    --text-primary: #ffffff;
+    --text-secondary: #b0b0b0;
+    --border-color: #404040;
+    --shadow-color: rgba(0, 0, 0, 0.3);
+}
+
+/* ===== DARK THEME STYLES ===== */
+.dark-theme body {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    color: var(--text-primary);
+}
+
+.dark-theme .navbar {
+    background: rgba(26, 26, 26, 0.95) !important;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.dark-theme .features-section {
+    background: var(--bg-primary);
+    color: var(--text-primary);
+}
+
+.dark-theme .feature-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+}
+
+.dark-theme .feature-card h4 {
+    color: var(--text-primary);
+}
+
+.dark-theme .feature-card p {
+    color: var(--text-secondary);
+}
+
+.dark-theme .section-title {
+    color: var(--text-primary);
+}
+
+.dark-theme .section-subtitle {
+    color: var(--text-secondary);
+}
+
+.dark-theme .footer {
+    background: var(--bg-secondary) !important;
+    color: var(--text-primary);
+}
+
+.dark-theme .btn-outline-primary {
+    border-color: var(--text-primary);
+    color: var(--text-primary);
+}
+
+.dark-theme .btn-outline-primary:hover {
+    background: var(--text-primary);
+    color: var(--bg-primary);
+}
+
+/* Hero section adjustments for dark theme */
+.dark-theme .hero-stats .stat-item {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dark-theme .floating-card {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.dark-theme .main-visual {
+    background: rgba(255, 255, 255, 0.08);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
