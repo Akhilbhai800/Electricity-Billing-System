@@ -1,276 +1,333 @@
-Electricity Billing System
-A full-stack web application for managing electricity billing, built with HTML, CSS, JavaScript, Python, and SQL.
+⚡ Electricity Billing System
+A complete web-based solution for managing electricity billing operations with automated calculations, customer management, and invoice generation.
 
-🌟 Features
-Customer Management: Add, edit, and delete customer records
+📋 Table of Contents
+Features
 
-Bill Generation: Automatically calculate electricity bills based on consumption
+Technology Stack
 
-Payment Tracking: Record and track payment status
+Project Structure
 
-Reporting: Generate monthly/annual reports
+Installation Guide
 
-User Authentication: Secure login system
+How to Run
 
-Dashboard: Overview of key metrics and statistics
+Screenshots
 
-🛠️ Tech Stack
-Frontend: HTML5, CSS3, JavaScript (ES6+)
+Usage Guide
 
-Backend: Python (Flask/Django/FastAPI - specify your framework)
+API Reference
 
-Database: SQL (MySQL/PostgreSQL/SQLite - specify your DB)
+✨ Features
+Customer Management: Add, view, edit, and delete customer records
 
-Additional Tools: (Add any other tools/libraries you used)
+Automated Bill Calculation: Smart calculation based on consumption units
+
+Invoice Generation: Professional invoice creation and printing
+
+Payment Tracking: Monitor payment status in real-time
+
+Admin Dashboard: Visual analytics and key metrics
+
+Multi-theme Support: Light and dark mode options
+
+Responsive Design: Works perfectly on all devices
+
+Report Generation: Generate various billing reports
+
+🏗️ Technology Stack
+Frontend
+HTML5 - Page structure and markup
+
+CSS3 - Styling with custom themes and animations
+
+JavaScript (ES6+) - Client-side functionality
+
+Backend
+Python Flask - Lightweight web framework
+
+RESTful APIs - Clean API architecture
+
+Database
+MySQL - Relational database for data storage
 
 📁 Project Structure
 text
-Electricity-Billing-System/
-│
-├── frontend/
-│   ├── index.html
-│   ├── css/
-│   │   └── style.css
-│   ├── js/
-│   │   └── main.js
-│   └── assets/
-│       └── images/
-│
+ElectricityBillingSystem/
 ├── backend/
-│   ├── app.py
-│   ├── requirements.txt
-│   ├── models.py
-│   ├── routes.py
-│   └── utils/
-│
-├── database/
-│   ├── schema.sql
-│   └── sample_data.sql
-│
-├── docs/
-│   └── API_Documentation.md
-│
-└── README.md
-🚀 Installation & Setup
+│   ├── app.py                    # Flask application server
+│   ├── models/                   # Data models
+│   ├── routes/                   # API endpoints
+│   ├── utils/                    # Helper functions
+│   └── requirements.txt          # Python dependencies
+├── frontend/
+│   ├── index.html               # Main dashboard page
+│   ├── css/
+│   │   ├── style.css            # Main stylesheet
+│   │   ├── dashboard.css        # Dashboard styles
+│   │   └── themes.css           # Theme configurations
+│   ├── js/                      # JavaScript files
+│   ├── pages/                   # Additional HTML pages
+│   ├── images/                  # UI images and icons
+│   └── assets/                  # Other frontend assets
+├── Screenshots/                  # Application screenshots
+│   ├── dashboard.png            # Dashboard view
+│   ├── customer_management.png  # Customer page
+│   ├── bill_generation.png      # Bill creation
+│   └── reports.png              # Reports view
+└── README.md                    # This documentation file
+🚀 Installation Guide
 Prerequisites
 Python 3.8 or higher
 
-Node.js (if using npm packages)
+MySQL Server installed
 
-SQL Database (MySQL/PostgreSQL)
+Web browser (Chrome, Firefox, Edge)
 
-Git
+Step-by-Step Setup
+Clone the Project
 
-Step 1: Clone the Repository
 bash
-git clone https://github.com/your-username/electricity-billing-system.git
-cd electricity-billing-system
-Step 2: Backend Setup
+git clone https://github.com/akhilbhai800/ElectricityBillingSystem.git
+cd ElectricityBillingSystem
+Setup Backend
+
 bash
 cd backend
-pip install -r requirements.txt
-Step 3: Database Configuration
-Create a new database in your SQL server
+pip install flask mysql-connector-python
+Configure Database
 
-Update database credentials in config.py or .env file
+python
+# Update database settings in backend/app.py
+db_config = {
+    'host': 'localhost',
+    'user': 'root',
+    'password': '',  # Your MySQL password
+    'database': 'electricity_billing'
+}
+Create Database
 
-Run database migrations:
-
+sql
+CREATE DATABASE electricity_billing;
+💻 How to Run
+Starting Backend Server
 bash
-python init_db.py
-Step 4: Run the Application
-bash
+cd backend
 python app.py
-The server will start at http://localhost:5000 (or your configured port)
+Server runs at: http://127.0.0.1:5000
 
-Step 5: Frontend Setup
-Open frontend/index.html in your browser or run a local server:
+Accessing Frontend
+Open frontend/index.html directly in your browser or use:
 
 bash
-# Using Python's HTTP server
 cd frontend
+# Using Python HTTP server
 python -m http.server 8000
-🔧 Configuration
-Create a .env file in the backend directory with the following variables:
+Then visit: http://localhost:8000
 
-env
-DB_HOST=localhost
-DB_PORT=3306
-DB_NAME=electricity_billing
-DB_USER=your_username
-DB_PASSWORD=your_password
-SECRET_KEY=your_secret_key
-DEBUG=True
-📊 Database Schema
-Main tables include:
+📸 Screenshots
+The project includes comprehensive screenshots in the Screenshots/ folder:
 
-customers - Customer information
+Dashboard Overview - Main admin dashboard with analytics
 
-meters - Meter details and readings
+Customer Management - Interface for managing customer data
 
-bills - Generated bills
+Bill Generation - Form for creating electricity bills
 
-payments - Payment records
+Payment Tracking - Payment status and history
 
-users - System users/admins
+Reports Section - Various billing and consumption reports
 
-tariffs - Electricity tariff rates
+User Profile - User account management
 
-🧪 Testing
-Backend Tests
-bash
-pytest tests/
-API Testing
-Use the provided Postman collection in docs/ folder or run:
+(View all screenshots in the Screenshots directory)
 
-bash
-python test_api.py
-📱 Usage
-Admin Login
+🎯 Usage Guide
+For Administrators
+Login to Dashboard
 
-Navigate to login page
+Open the application in browser
 
-Use admin credentials
+Navigate to admin panel
 
-Add New Customer
+Manage Customers
 
-Go to Customers → Add New
+Add new customers with details
 
-Fill in customer details and meter information
+View existing customer list
 
-Generate Bill
+Edit or remove customer information
 
-Enter meter reading
-
-System calculates amount based on tariff
-
-Generate and print bill
-
-Process Payment
+Generate Bills
 
 Select customer
 
-Enter payment details
+Enter meter readings
 
-Update payment status
+System auto-calculates amount
 
-🔐 Security Features
-Password hashing using bcrypt
+Generate and print invoice
 
-SQL injection prevention
+Track Payments
 
-XSS protection
+Record customer payments
 
-Session management
+View payment history
 
-Role-based access control
+Generate pending payment reports
 
-📝 API Endpoints
-Method	Endpoint	Description
-POST	/api/login	User authentication
-GET	/api/customers	Get all customers
-POST	/api/customers	Create new customer
-PUT	/api/customers/{id}	Update customer
-POST	/api/bills	Generate bill
-GET	/api/reports/monthly	Monthly report
-(Complete API documentation in docs/API_Documentation.md)
+Bill Calculation
+The system uses progressive tariff:
 
-🤝 Contributing
-Fork the repository
+First 100 units: ₹3 per unit
 
-Create a feature branch (git checkout -b feature/AmazingFeature)
+101-200 units: ₹4.50 per unit
 
-Commit changes (git commit -m 'Add some AmazingFeature')
+201-300 units: ₹6 per unit
 
-Push to branch (git push origin feature/AmazingFeature)
+Above 300 units: ₹7.50 per unit
 
-Open a Pull Request
+🔌 API Reference
+Base URL
+text
+http://localhost:5000
+Status Check
+http
+GET /
+Response:
+
+json
+{
+  "message": "Electricity Billing System API is running!",
+  "status": "success"
+}
+Health Check
+http
+GET /api/health
+Checks database connection status
+
+Customer APIs
+http
+GET    /api/customers          # List all customers
+POST   /api/customers          # Create new customer
+GET    /api/customers/{id}     # Get specific customer
+PUT    /api/customers/{id}     # Update customer
+DELETE /api/customers/{id}     # Delete customer
+Bill APIs
+http
+GET    /api/bills             # Get all bills
+POST   /api/bills             # Create new bill
+GET    /api/bills/{id}        # Get specific bill
+PUT    /api/bills/status/{id} # Update bill status
+🛠️ Development
+Project Status
+✅ Backend: Fully functional Flask API
+✅ Frontend: Complete responsive interface
+✅ Database: MySQL integration working
+✅ Features: All core features implemented
+
+Running Tests
+bash
+# Test backend API
+curl http://localhost:5000/
+
+# Test database connection
+curl http://localhost:5000/api/health
+File Locations
+Main Entry Point: frontend/index.html
+
+Backend Server: backend/app.py
+
+Database Config: backend/app.py (db_config)
+
+CSS Files: frontend/css/ directory
+
+JavaScript: frontend/js/ directory
+
+Screenshots: Screenshots/ directory
+
+🔧 Troubleshooting
+Common Issues
+Backend not starting
+
+bash
+# Check Python installation
+python --version
+
+# Check Flask installation
+pip show flask
+
+# Run from correct directory
+cd backend && python app.py
+Database connection error
+
+Ensure MySQL service is running
+
+Verify database credentials
+
+Create database if not exists
+
+Frontend not loading
+
+Check if backend is running
+
+Open browser console for errors
+
+Verify file paths in HTML
+
+Port already in use
+
+python
+# Change port in app.py
+app.run(debug=True, port=5001)
+Logs and Debugging
+Backend logs appear in terminal
+
+Browser Dev Tools (F12) show frontend errors
+
+Check network tab for API calls
+
+📦 Dependencies
+Python Packages (backend/requirements.txt)
+text
+flask==2.3.3
+mysql-connector-python==8.1.0
+Frontend Libraries
+Chart.js (for graphs and charts)
+
+Font Awesome (icons)
+
+Google Fonts (typography)
 
 📄 License
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is available for educational and personal use.
 
-👥 Authors
-Your Name - @yourusername
+👤 Author
+Akhilesh Yadav
+GitHub: @akhilbhai800
 
-🙏 Acknowledgments
-Icons from FontAwesome
-
-UI Inspiration from AdminLTE
-
-Charts using Chart.js
-
-📧 Contact
-For questions or support, please contact:
-
-Email: your.email@example.com
-
-Project Link: https://github.com/your-username/electricity-billing-system
-
-⭐ If you find this project useful, please give it a star on GitHub!
-
-This response is AI-generated, for reference only.
-are itna bada nhi mere se detial liye hi nhi
-Electricity Billing System
-A simple web application for managing electricity bills using HTML, CSS, JavaScript, Python, and SQL.
-
-What it does
-Add and manage customer details
-
-Calculate electricity bills automatically
-
-View and search customer bills
-
-Store data in a database
-
-Setup Instructions
-1. Install Requirements
+Quick Start Commands
 bash
-pip install flask mysql-connector-python
-2. Setup Database
-sql
-CREATE DATABASE electricity_billing;
-USE electricity_billing;
+# Clone repository
+git clone https://github.com/akhilbhai800/ElectricityBillingSystem.git
 
-CREATE TABLE customers (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    name VARCHAR(100),
-    address TEXT,
-    meter_no VARCHAR(50),
-    email VARCHAR(100)
-);
-
-CREATE TABLE bills (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    customer_id INT,
-    units_used INT,
-    amount DECIMAL(10,2),
-    month VARCHAR(20),
-    status VARCHAR(20)
-);
-3. Run the Application
-bash
+# Setup and run
+cd ElectricityBillingSystem/backend
+pip install -r requirements.txt
 python app.py
-Then open index.html in your browser.
 
-Project Structure
-text
-Electricity-Billing-System/
-├── index.html          # Main page
-├── style.css          # Styles
-├── script.js          # Frontend logic
-├── app.py             # Backend API
-├── database.py        # Database connection
-└── README.md          # This file
-Features
-Add new customers
+# Access application
+# Backend: http://localhost:5000
+# Frontend: frontend/index.html
+Project Completion Status
+Backend API Development
 
-Generate bills
+Frontend Interface
 
-View all bills
+Database Integration
 
-Search by customer name
+Core Features Implementation
 
-Calculate bill amount based on units
+Documentation
 
-Note
-Update database credentials in database.py before running.# Electricity-Billing-System
+Screenshots Collection
